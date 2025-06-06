@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Wide Creative Design Studio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            background-image: url('../images/Home/Home.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0);
+            z-index: 1;
+        }
+
+        .header {
+            background-color: transparent;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 50;
+            padding-top: 2rem;
+            padding-bottom: 2rem;
+        }
+
+        .header-container {
+            max-width: 1280px;
+            margin-left: auto;
+            margin-right: auto;
+            padding-left: 2.5rem;
+            padding-right: 2.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.875rem;
+            font-weight: 700;
+            color: #474D4D;
+            z-index: 10;
+            position: relative;
+            text-decoration: none;
+        }
+
+        .desktop-nav {
+            display: none;
+            gap: 3rem;
+            z-index: 10;
+            position: relative;
+        }
+
+        @media (min-width: 768px) {
+            .desktop-nav {
+                display: flex;
+            }
+        }
+
+        .nav-link {
+            color: #474D4D;
+            font-weight: 500;
+            transition: opacity 0.3s ease;
+            text-decoration: none;
+        }
+
+        .nav-link:hover,
+        .nav-link.active {
+            opacity: 0.8;
+        }
+
+        .mobile-menu-button {
+            display: block;
+            color: #474D4D;
+            outline: none;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            z-index: 10;
+            position: relative;
+        }
+
+        @media (min-width: 768px) {
+            .mobile-menu-button {
+                display: none;
+            }
+        }
+
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 6rem;
+            left: 0;
+            right: 0;
+            background-color: rgba(0, 0, 0, 0.9);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            z-index: 40;
+        }
+
+        .mobile-menu.show {
+            display: block;
+        }
+
+        .mobile-menu .nav-link {
+            display: block;
+            padding: 0.75rem 2.5rem;
+            color: #474D4D;
+        }
+
+        .main-content {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 10;
+            position: relative;
+            padding-top: 6rem;
+        }
+
+        .contact-container {
+            max-width: 1200px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            padding: 0 2rem;
+        }
+
+        @media (min-width: 768px) {
+            .contact-container {
+                flex-direction: row;
+                gap: 4rem;
+            }
+        }
+
+        .contact-left {
+            flex: 1;
+            margin-bottom: 2rem;
+        }
+
+        @media (min-width: 768px) {
+            .contact-left {
+                margin-bottom: 0;
+            }
+        }
+
+        .contact-right {
+            flex: 2;
+        }
+
+        .hello-heading {
+            font-size: 4rem;
+            font-weight: 700;
+            line-height: 100%;
+            color: #474D4D;
+            margin-bottom: 5rem;
+        }
+
+        .contact-info {
+            margin-bottom: 2rem;
+        }
+
+        .address, .contact {
+            margin-bottom: 5rem;
+        }
+
+        .address p, .contact p {
+            margin: 0 0 12px 0;
+            color: #474D4D;
+            font-size: 1.25rem;
+            line-height: 100%;
+            font-weight: 400;
+        }
+
+
+        .intro-text {
+            color: #474D4D;
+            margin-bottom: 5rem;
+            line-height: 1.6;
+
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .form-group label {
+            color: #474D4D;
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            padding: 0.75rem;
+            border: none;
+            border-bottom: 1px solid #474D4D;
+            border-radius: 0;
+            background-color: transparent;
+            color: #474D4D;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .form-group textarea {
+            min-height: 4rem;
+            resize: vertical;
+        }
+
+        .send-button {
+            align-self: flex-end;
+            padding: 0.75rem 2.5rem;
+            background-color: transparent;
+            border: 1px solid #474D4D;
+            border-radius: 4px;
+            color: #474D4D;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .send-button:hover {
+            background-color: #474D4D;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="overlay"></div>
+
+    <header class="header">
+        <div class="header-container">
+            <a href="../main.html" class="logo">Wide</a>
+            <nav class="desktop-nav">
+                <a href="work.html" class="nav-link">Work</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="contact.html" class="nav-link active">Contact</a>
+            </nav>
+            <button id="mobile-menu-button" class="mobile-menu-button">
+                <svg class="w-6 h-6" width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7">
+                    </path>
+                </svg>
+            </button>
+        </div>
+        <div id="mobile-menu" class="mobile-menu">
+            <a href="work.html" class="nav-link">Work</a>
+            <a href="about.html" class="nav-link">About</a>
+            <a href="contact.html" class="nav-link active">Contact</a>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="contact-container">
+            <div class="contact-left">
+                <h2 class="hello-heading">Hello</h2>
+                
+                <div class="contact-info">
+                    <div class="address">
+                        <p>1212 N. Coast Hwy. 101</p>
+                        <p>Saldanha, Lisbon 92024</p>
+                    </div>
+                    
+                    <div class="contact">
+                        <p>+351 760 753 129</p>
+                        <p>info@wide.com</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="contact-right">
+                <p class="intro-text">
+                    Collaboration begins with a conversation. Whether you're interested in discussing a new project or simply wish to find out more about our services and what we can do for you, we are here to help. Send us a message below or call us.
+                </p>
+                
+                <form class="contact-form">
+                    <div class="form-group">
+                        <label for="name">name*</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">email*</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">message*</label>
+                        <textarea id="message" name="message" required></textarea>
+                    </div>
+                    
+                    <button type="submit" class="send-button">Send</button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function () {
+            document.getElementById('mobile-menu').classList.toggle('show');
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Wide Creative Design Studio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 6rem;
+            min-height: 100vh;
+            background-color: white;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .header {
+            background-color: transparent;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 50;
+            padding-top: 2rem;
+            padding-bottom: 2rem;
+        }
+
+        .header-container {
+            max-width: 1280px;
+            margin-left: auto;
+            margin-right: auto;
+            padding-left: 2.5rem;
+            padding-right: 2.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.875rem;
+            font-weight: 700;
+            color: #474D4D;
+            z-index: 10;
+            position: relative;
+            text-decoration: none;
+        }
+
+        .desktop-nav {
+            display: none;
+            gap: 3rem;
+            z-index: 10;
+            position: relative;
+        }
+
+        @media (min-width: 768px) {
+            .desktop-nav {
+                display: flex;
+            }
+        }
+
+        .nav-link {
+            color: #474D4D;
+            font-weight: 500;
+            transition: opacity 0.3s ease;
+            text-decoration: none;
+        }
+
+        .nav-link:hover,
+        .nav-link.active {
+            opacity: 0.8;
+        }
+
+        .mobile-menu-button {
+            display: block;
+            color: #474D4D;
+            outline: none;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            z-index: 10;
+            position: relative;
+        }
+
+        @media (min-width: 768px) {
+            .mobile-menu-button {
+                display: none;
+            }
+        }
+
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 6rem;
+            left: 0;
+            right: 0;
+            background-color: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            z-index: 40;
+        }
+
+        .mobile-menu.show {
+            display: block;
+        }
+
+        .mobile-menu .nav-link {
+            display: block;
+            padding: 0.75rem 2.5rem;
+            color: #474D4D;
+        }
+
+        /* Main Content Styles */
+        .main-content {
+            flex: 1;
+            padding-top: 7rem;
+        }
+
+        /* Section Styles */
+        .section-padding {
+            padding-bottom: 6rem;
+        }
+
+        .section-padding-no-top {
+            padding-bottom: 6rem;
+        }
+
+        .content-container {
+            max-width: 1280px;
+            margin-left: auto;
+            margin-right: auto;
+            padding-left: 2.5rem;
+            padding-right: 2.5rem;
+        }
+
+        /* Section Text Styles */
+        .section-1-text {
+            font-size: 2rem;
+            line-height: 2.75rem;
+            font-weight: 500;
+            color: #474D4D;
+            max-width: 64rem;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+            padding-top: 4rem;
+        }
+
+        /* Image Grid Styles */
+        .image-grid-2-col {
+            display: grid;
+            grid-template-columns: 1fr;
+            margin-top: 5rem;
+            gap: 2.5rem
+        }
+
+        @media (min-width: 768px) {
+            .image-grid-2-col {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        /* Image Placeholder Styles */
+        .placeholder-image {
+            background-color: #f5f5f5;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            position: relative;
+            width: 100%;
+        }
+
+        .placeholder-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .placeholder-image-full {
+            background-color: #f5f5f5;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            position: relative;
+            width: 100%;
+        }
+
+        .placeholder-image-full img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Section Layout Styles */
+        .flex-col-md-row {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: flex-start;
+            padding-top: 4rem;
+        }
+
+        @media (min-width: 768px) {
+            .flex-col-md-row {
+                flex-direction: row;
+            }
+        }
+
+
+        /* Heading Styles */
+        .section-center-heading-lg {
+            display: block;
+            width: 100%;
+            font-size: 2rem;
+            font-weight: 600;
+            color: #474D4D;
+            margin-bottom: 2rem;
+        }
+
+        @media (min-width: 768px) {
+            .section-center-heading-lg {
+                margin-bottom: 0;
+                margin-right: 4rem;
+                width: 25%;
+            }
+        }
+
+        /* Heading Styles */
+        .section-heading-lg {
+            font-size: 2rem;
+            font-weight: 500;
+            color: #474D4D;
+            margin-bottom: 2rem;
+        }
+
+        @media (min-width: 768px) {
+            .section-heading-lg {
+                margin-bottom: 0;
+                margin-right: 4rem;
+                width: 25%;
+            }
+        }
+
+        /* Text Styles */
+        .section-text {
+            font-size: 1.125rem;
+            color: #474D4D;
+            line-height: 1.625;
+        }
+
+        @media (min-width: 768px) {
+            .section-text {
+                width: 75%;
+            }
+        }
+
+        /* Grid Layout Styles */
+        .grid-cols-4-lg {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+
+        @media (min-width: 640px) {
+            .grid-cols-4-lg {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .grid-cols-4-lg {
+                grid-template-columns: 1fr 1fr 1fr 1fr;
+            }
+        }
+
+        .subsection-heading {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #474D4D;
+            margin-bottom: 0.75rem;
+        }
+
+        .list-style {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            font-weight: 500;
+            line-height: 1.5;
+            color: #474D4D;
+            font-size: 1rem;
+        }
+
+        /* Team Grid Styles */
+        .grid-cols-3-md-auto {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin-top: 5rem;
+        }
+
+        @media (min-width: 640px) {
+            .grid-cols-3-md-auto {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        /* Client Grid Styles */
+        .grid-cols-4-lg-auto {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+
+        @media (min-width: 640px) {
+            .grid-cols-4-lg-auto {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (min-width: 768px) {
+            .grid-cols-4-lg-auto {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+
+        /* Footer Styles */
+        .footer {
+            background-color: white;
+            padding-top: 4rem;
+            padding-bottom: 4rem;
+            color: #474D4D;
+        }
+
+        .footer-content {
+            max-width: 1280px;
+            margin-left: auto;
+            margin-right: auto;
+            padding-left: 2.5rem;
+            padding-right: 2.5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 2.5rem;
+            text-align: center;
+        }
+
+        @media (min-width: 768px) {
+            .footer-content {
+                flex-direction: row;
+                gap: 12rem;
+                text-align: left;
+                justify-content: flex-start;
+            }
+        }
+
+        .footer-heading {
+            font-size: 1.25rem;
+            font-weight: 500;
+            color: #474D4D;
+            margin-bottom: 1rem;
+        }
+
+        .footer-text {
+            font-size: 1.125rem;
+        }
+
+        .copyright-text {
+            text-align: center;
+            font-size: 0.875rem;
+            color: #6B7280;
+            margin-top: 4rem;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <div class="header-container">
+            <a href="../main.html" class="logo">Wide</a>
+            <nav class="desktop-nav">
+                <a href="work.html" class="nav-link">Work</a>
+                <a href="about.html" class="nav-link active">About</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </nav>
+            <button id="mobile-menu-button" class="mobile-menu-button">
+                <svg class="w-6 h-6" width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7">
+                    </path>
+                </svg>
+            </button>
+        </div>
+        <div id="mobile-menu" class="mobile-menu">
+            <a href="work.html" class="nav-link">Work</a>
+            <a href="about.html" class="nav-link active">About</a>
+            <a href="contact.html" class="nav-link">Contact</a>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <section id="section-1-start" class="section-padding">
+            <div class="content-container text-center">
+                <p class="section-1-text">
+                    We believe that brands need to interact with people,
+                    not consumers. After all, brands are part of our lives.
+                </p>
+            </div>
+            <div class="image-grid-2-col">
+                <div class="placeholder-image h-[48rem]">
+                    <img src="../images/About/red-francisco.jpg" alt="Office Interior with 'H'">
+                </div>
+                <div class="placeholder-image h-[48rem]">
+                    <img src="../images/About/vadim.jpg" alt="Industrial Designer Workspace">
+                </div>
+            </div>
+        </section>
+
+        <section id="services-start" class="section-padding">
+            <div class="content-container flex-col-md-row">
+                <h2 class="section-heading-lg text-left">Services</h2>
+                <p class="section-text text-left"></p>
+                We provide concept-driven creative solutions that are led by an intelligent understanding of the
+                task at hand and achieved through sound strategic insights. Solutions that are both aesthetically
+                pleasing and most importantly effective. Our diverse services allow for a consistent brand
+                perception, making us a singular resource for all your design, content, and strategy needs.
+                </p>
+            </div>
+            <div class="content-container grid-cols-4-lg">
+                <div>
+                    <h3 class="subsection-heading">Identity & Branding</h3>
+                    <ul class="list-style">
+                        <li>Strategy</li>
+                        <li>Naming</li>
+                        <li>Art Direction</li>
+                        <li>Identity Design</li>
+                        <li>Iconography</li>
+                        <li>Brand Books</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="subsection-heading">Content Creation</h3>
+                    <ul class="list-style">
+                        <li>Concept</li>
+                        <li>Photography</li>
+                        <li>Videography</li>
+                        <li>Illustration</li>
+                        <li>Copywriting</li>
+                        <li>Title Sequences</li>
+                        <li>Campaigns</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="subsection-heading">Print & Packaging</h3>
+                    <ul class="list-style">
+                        <li>Editorial Design</li>
+                        <li>Brand Collateral</li>
+                        <li>Product Design</li>
+                        <li>Packaging</li>
+                        <li>Prototyping</li>
+                        <li>Event Design</li>
+                        <li>Signage</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="subsection-heading">Digital & Web</h3>
+                    <ul class="list-style">
+                        <li>UI/UX</li>
+                        <li>Web Design / Dev</li>
+                        <li>Mobile Design</li>
+                        <li>Ecommerce / Retail</li>
+                        <li>Digital Strategy</li>
+                        <li>Social Campaigns</li>
+                        <li>Motion Graphics</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <div class="w-screen relative left-1/2 right-1/2 ml-[-50vw] mr-[-50vw] mt-24">
+            <div class="placeholder-image h-[800px] w-full">
+                <img src="../images/About/annie-spratt.jpg" alt="Office Interior">
+            </div>
+        </div>
+        <section id="clients-start" class="section-padding text-center"></section>
+        </section>
+
+        <section class="section-padding">
+            <div class="content-container flex flex-col md:flex-row justify-between items-start pt-16">
+                <h2 class="section-heading-lg md:mb-0 md:mr-16 md:w-1/4 w-full">Process</h2>
+                <div class="md:w-3/4 w-full"></div>
+                <p class="section-text mb-6">
+                    We believe that structure empowers creativity. The 12 notes of the musical scale. The 26 letters in
+                    the alphabet. The 256 colors in the RGB digital color spectrum. All structural systems used to
+                    unlock the vast creativity of music, literature, and visual communication. The foundation to our
+                    methodology is the belief that creativity used in conjunction with sound strategic thinking can
+                    solve any problem. Built to adapt to each project’s unique circumstances, our process begins with
+                    conversation, insight, and research. Driven by our client’s aspirations and business objectives, our
+                    tailored approach allows us to focus on creating impactful and effective design solutions.
+                </p>
+            </div>
+            </div>
+            <div class="image-grid-2-col">
+                <div class="placeholder-image h-96">
+                    <img src="../images/About/alvaro-bernal.jpg" alt="People Writing on Walls">
+                </div>
+                <div class="placeholder-image h-96">
+                    <img src="../images/About/redd-francisco-unsplash.jpg" alt="Collaborative Meeting">
+                </div>
+            </div>
+        </section>
+
+        <section id="clients-start" class="section-padding text-center">
+            <div class="content-container">
+                <h2 class="section-center-heading-lg text-center mx-auto">Clients</h2>
+                <p class="section-text max-w-2xl mx-auto text-center"></p>
+                We pride ourselves on building trust and understanding with our clients. From forward-thinking
+                startups to large international brands, here are some of the companies that we are fortunate to work
+                with.
+                </p>
+            </div>
+            <div class="content-container grid-cols-4-lg-auto">
+                <div class="h-40">
+                    <img src="../images/About/logos/nike.png" alt="Nike Logo">
+                </div>
+                <div class="h-40">
+                    <img src="../images/About/logos/formula1.png" alt="Formula 1 Logo">
+                </div>
+                <div class="h-40">
+                    <img src="../images/About/logos/vogue.png" alt="Vogue Logo">
+                </div>
+                <div class="h-40">
+                    <img src="../images/About/logos/reebok.png" alt="Reebok Logo">
+                </div>
+                <div class="h-40">
+                    <img src="../images/About/logos/wholefoods.png" alt="Whole Foods Logo">
+                </div>
+                <div class="h-40">
+                    <img src="../images/About/logos/carlsberg.png" alt="Carlsberg Beer Logo">
+                </div>
+                <div class="h-40">
+                    <img src="../images/About/logos/ripcurl.png" alt="Rip Curl Logo">
+                </div>
+                <div class="h-40">
+                    <img src="../images/About/logos/winnebago.png" alt="Winnebago Logo">
+                </div>
+            </div>
+        </section>
+
+        <section class="section-padding text-center">
+            <div class="content-container">
+                <p class="section-1-text">
+                    We take everything seriously, except ourselves.
+                </p>
+            </div>
+            <div class="content-container grid-cols-3-md-auto">
+                <div class="placeholder-image aspect-square">
+                    <img src="../images/About/matt.jpg" alt="Team Member 1">
+                </div>
+                <div class="placeholder-image aspect-square">
+                    <img src="../images/About/ismail.jpg" alt="Team Member 2">
+                </div>
+                <div class="placeholder-image aspect-square">
+                    <img src="../images/About/almani.jpg" alt="Team Member 3">
+                </div>
+                <div class="placeholder-image aspect-square">
+                    <img src="../images/About/bryan-huff.jpg" alt="Team Member 4">
+                </div>
+                <div class="placeholder-image aspect-square">
+                    <img src="../images/About/rachel.jpg" alt="Team Member 5">
+                </div>
+                <div class="placeholder-image aspect-square">
+                    <img src="../images/About/lawrence-lamoen.jpg" alt="Team Member 6">
+                </div>
+            </div>
+        </section>
+        <section id="team-start" class="section-padding text-center">
+            <div class="content-container">
+                <h2 class="section-center-heading-lg text-center mx-auto">Team</h2>
+                <p class="section-text max-w-2xl mx-auto text-center">
+                    We are a tight-knit team of specialists that's small enough to focus on important details, but big
+                    enough to handle even the most challenging of tasks. This ensures a hands-on creative process that
+                    keeps our clients in direct communication with the key creatives shaping their projects.
+                </p>
+            </div>
+            <div class="image-grid-2-col h-[48rem]">
+                <div class="placeholder-image">
+                    <img src="../images/About/raj-rana.jpg" alt="Office Interior with Plants">
+                </div>
+                <div class="placeholder-image">
+                    <img src="../images/About/jason-goodman.jpg" alt="Two Women at Table">
+                </div>
+            </div>
+        </section>
+
+        <section class="section-padding-no-top">
+            <div class="placeholder-image h-[48rem] w-full">
+                <img src="../images/About/michiel-annaert.jpg" alt="Museum of Art, Architecture and Technology">
+            </div>
+            <div class="content-container text-center pt-16">
+                <p class="section-1-text">
+                    Working in this field makes us feel reborn every day. We are constantly in beta. That’s how we stay
+                    restless and ready to create concepts and actions that are part of this ongoing conversation between
+                    people.
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div>
+                <h3 class="footer-heading">Say Hello</h3>
+                <p class="footer-text">+351 760 753 129</p>
+                <p class="footer-text">info@wide.com</p>
+            </div>
+            <div>
+                <h3 class="footer-heading">Postcard</h3>
+                <p class="footer-text">1212 N. Coast Hwy. 101</p>
+                <p class="footer-text">Saldanha, Lisbon 92024</p>
+            </div>
+            <div>
+                <h3 class="footer-heading">Social</h3>
+                <p class="footer-text">Instagram / LinkedIn / Twitter</p>
+            </div>
+        </div>
+        <div class="copyright-text">
+            <p>&copy; <span id="currentYear">2025</span> Wide. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function () {
+            document.getElementById('mobile-menu').classList.toggle('show');
+        });
+
+        // Update copyright year
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+    </script>
+</body>
+
+</html>
