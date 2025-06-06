@@ -155,6 +155,58 @@
                 font-size: 1.5rem;
             }
         }
+
+        /* Footer Styles */
+        .footer {
+            background-color: white;
+            padding-top: 4rem;
+            padding-bottom: 4rem;
+            color: #474D4D;
+        }
+
+        .footer-content {
+            max-width: 1280px;
+            margin-left: auto;
+            margin-right: auto;
+            padding-left: 2.5rem;
+            padding-right: 2.5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 2.5rem;
+            text-align: center;
+        }
+
+        @media (min-width: 768px) {
+            .footer-content {
+                flex-direction: row;
+                gap: 12rem;
+                text-align: left;
+            }
+        }
+
+        .footer-heading {
+            font-size: 1.25rem;
+            font-weight: 500;
+            color: #474D4D;
+            margin-bottom: 1rem;
+        }
+
+        .footer-text {
+            font-size: 1.125rem;
+        }
+
+        .footer-social-links {
+            display: flex; 
+            flex-direction:column;
+        }
+
+        .copyright-text {
+            text-align: center;
+            font-size: 0.875rem;
+            color: #6B7280;
+            margin-top: 4rem;
+        }
     </style>
 </head>
 
@@ -192,6 +244,32 @@
             </p>
         </div>
     </main>
+
+    <footer class="footer">
+      <div class="footer-content">
+        <div>
+          <h3 class="footer-heading">Say Hello</h3>
+          <p class="footer-text">+351 760 753 129</p>
+          <p class="footer-text">info@wide.com</p>
+        </div>
+        <div>
+          <h3 class="footer-heading">Postcard</h3>
+          <p class="footer-text">1212 N. Coast Hwy. 101</p>
+          <p class="footer-text">Saldanha, Lisbon 92024</p>
+        </div>
+        <div>
+          <h3 class="footer-heading">Social</h3>
+          <div class="footer-text footer-social-links">
+            <a href="https://www.instagram.com/accounts/login/">Instagram</a>
+            <a href="https://www.linkedin.com/company/login">LinkedIn</a>
+            <a href="https://www.facebook.com/login/">Facebook</a>
+          </div>
+        </div>
+      </div>
+      <div class="copyright-text">
+        <p>&copy; <span id="currentYear">2025</span> Wide. All Rights Reserved.</p>
+      </div>
+    </footer>
 
     <script>
         // Mobile menu toggle
