@@ -360,7 +360,6 @@
                 flex-direction: row;
                 gap: 12rem;
                 text-align: left;
-                justify-content: flex-start;
             }
         }
 
@@ -373,6 +372,11 @@
 
         .footer-text {
             font-size: 1.125rem;
+        }
+
+        .footer-social-links {
+            display: flex; 
+            flex-direction:column;
         }
 
         .copyright-text {
@@ -630,7 +634,11 @@
             </div>
             <div>
                 <h3 class="footer-heading">Social</h3>
-                <p class="footer-text">Instagram / LinkedIn / Twitter</p>
+                <div class="footer-text footer-social-links">
+                  <a href="https://www.instagram.com/accounts/login/">Instagram</a>
+                  <a href="https://www.linkedin.com/company/login">LinkedIn</a>
+                  <a href="https://www.facebook.com/login/">Facebook</a> 
+                </div>
             </div>
         </div>
         <div class="copyright-text">
